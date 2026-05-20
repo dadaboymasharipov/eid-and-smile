@@ -1742,17 +1742,22 @@ h2 {
   }
 
   .lantern-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
   }
 
   .lantern {
-    min-height: 146px;
-    padding: 12px 6px;
+    min-height: clamp(136px, 36vw, 160px);
+    padding: 12px 6px 14px;
+    place-items: center;
+    align-content: center;
+    justify-items: center;
+    gap: 8px;
   }
 
   .lantern__body {
-    width: clamp(54px, 19vw, 78px);
-    height: clamp(76px, 26vw, 108px);
+    width: clamp(50px, 17vw, 70px);
+    height: clamp(70px, 23vw, 96px);
     border-width: 2px;
   }
 
@@ -1763,6 +1768,9 @@ h2 {
 
   .lantern__text {
     font-size: 0.9rem;
+    grid-column: auto;
+    grid-row: auto;
+    align-self: auto;
     overflow-wrap: anywhere;
   }
 }
@@ -1843,31 +1851,35 @@ h2 {
   }
 
   .lantern-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
   }
 
   .lantern {
-    min-height: 118px;
-    grid-template-columns: auto 1fr;
-    justify-items: start;
-    padding: 14px 18px;
+    min-height: 122px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 10px 4px 12px;
+    gap: 7px;
   }
 
   .lantern__top {
-    grid-column: 1;
+    grid-column: auto;
+    width: 30px;
+    height: 12px;
   }
 
   .lantern__body {
-    grid-column: 1;
-    width: 52px;
-    height: 72px;
+    grid-column: auto;
+    width: 48px;
+    height: 66px;
   }
 
   .lantern__text {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    align-self: center;
-    font-size: 1rem;
+    grid-column: auto;
+    grid-row: auto;
+    align-self: auto;
+    font-size: 0.82rem;
   }
 
   .wish-output {
