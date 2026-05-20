@@ -1702,12 +1702,34 @@ h2 {
 
 @media (max-width: 720px) {
   .hero {
-    min-height: min(680px, 100svh);
-    padding-bottom: clamp(28px, 9vw, 46px);
+    min-height: auto;
+    align-content: start;
+    gap: 18px;
+    padding-top: clamp(118px, 34vw, 168px);
+    padding-bottom: 28px;
   }
 
   .hero-text {
     max-width: 34rem;
+  }
+
+  .moon {
+    top: 26px;
+    right: 22px;
+    width: clamp(108px, 34vw, 150px);
+  }
+
+  .arch {
+    right: 12px;
+    bottom: 18px;
+    width: clamp(150px, 48vw, 230px);
+    opacity: 0.42;
+  }
+
+  .arch-two {
+    right: clamp(48px, 16vw, 94px);
+    bottom: 0;
+    width: clamp(104px, 34vw, 160px);
   }
 
   .message-panel {
@@ -1751,11 +1773,22 @@ h2 {
   }
 
   h1 {
-    font-size: clamp(2.64rem, 14vw, 3.75rem);
+    font-size: clamp(2.22rem, 10.8vw, 2.95rem);
   }
 
   h2 {
-    font-size: clamp(1.78rem, 9.5vw, 2.7rem);
+    font-size: clamp(1.72rem, 8vw, 2.35rem);
+  }
+
+  .hero {
+    padding-top: clamp(104px, 31vw, 140px);
+    padding-bottom: 24px;
+  }
+
+  .hero-text {
+    margin-top: 14px;
+    font-size: 0.98rem;
+    line-height: 1.62;
   }
 
   .hero-text,
@@ -1805,7 +1838,8 @@ h2 {
 
 @media (max-width: 360px) {
   .hero {
-    min-height: 620px;
+    min-height: auto;
+    padding-top: 102px;
   }
 
   .lantern-grid {
