@@ -169,7 +169,7 @@ function closeLetterCard() {
     cardPanel.classList.remove("is-closing");
     cardButton.removeAttribute("disabled");
     cardButton.querySelector("span:last-child").textContent = "작은 편지 열기";
-  }, 1050);
+  }, 1450);
 }
 
 function openLanternStage(wishKey) {
