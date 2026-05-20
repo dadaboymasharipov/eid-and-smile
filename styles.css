@@ -17,6 +17,7 @@
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 [hidden] {
@@ -55,6 +56,13 @@ body.intro-open {
 
 button {
   font: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .intro {
@@ -486,7 +494,7 @@ h2 {
 }
 
 .message-panel.is-visible .envelope-scene {
-  animation: envelope-arrive 1250ms cubic-bezier(0.16, 0.9, 0.22, 1) forwards;
+  animation: envelope-arrive 860ms cubic-bezier(0.16, 0.9, 0.22, 1) forwards;
 }
 
 .message-panel.is-closing .envelope-scene {
@@ -520,7 +528,7 @@ h2 {
 }
 
 .message-panel.is-visible .eid-envelope::before {
-  animation: envelope-halo 1600ms ease 720ms forwards;
+  animation: envelope-halo 1600ms ease 520ms forwards;
 }
 
 .eid-envelope__back,
@@ -551,7 +559,7 @@ h2 {
 }
 
 .message-panel.is-visible .eid-envelope__letter-shadow {
-  animation: envelope-paper-peek 760ms ease 1220ms forwards;
+  animation: envelope-paper-peek 760ms ease 1180ms forwards;
 }
 
 .eid-envelope__front {
@@ -579,7 +587,7 @@ h2 {
 }
 
 .message-panel.is-visible .eid-envelope__flap {
-  animation: envelope-open 980ms cubic-bezier(0.18, 0.82, 0.22, 1) 1120ms forwards;
+  animation: envelope-open 980ms cubic-bezier(0.18, 0.82, 0.22, 1) 1180ms forwards;
 }
 
 .message-panel.is-closing .eid-envelope__flap {
@@ -599,7 +607,7 @@ h2 {
 }
 
 .message-panel.is-visible .eid-envelope__seal {
-  animation: seal-fade 520ms ease 1040ms forwards;
+  animation: seal-lift 820ms cubic-bezier(0.16, 0.9, 0.22, 1) 720ms forwards;
 }
 
 .envelope-magic {
@@ -629,37 +637,37 @@ h2 {
 .envelope-magic span:nth-child(1) {
   --x: -130px;
   --y: -92px;
-  animation-delay: 1120ms;
+  animation-delay: 900ms;
 }
 
 .envelope-magic span:nth-child(2) {
   --x: -78px;
   --y: -145px;
-  animation-delay: 1280ms;
+  animation-delay: 1040ms;
 }
 
 .envelope-magic span:nth-child(3) {
   --x: 92px;
   --y: -126px;
-  animation-delay: 1200ms;
+  animation-delay: 980ms;
 }
 
 .envelope-magic span:nth-child(4) {
   --x: 138px;
   --y: -44px;
-  animation-delay: 1360ms;
+  animation-delay: 1120ms;
 }
 
 .envelope-magic span:nth-child(5) {
   --x: -118px;
   --y: 18px;
-  animation-delay: 1460ms;
+  animation-delay: 1240ms;
 }
 
 .envelope-magic span:nth-child(6) {
   --x: 118px;
   --y: 28px;
-  animation-delay: 1540ms;
+  animation-delay: 1320ms;
 }
 
 .message-card,
@@ -708,7 +716,7 @@ h2 {
 }
 
 .message-panel.is-visible .message-card {
-  animation: letter-rise 1040ms cubic-bezier(0.16, 0.9, 0.22, 1) 1860ms forwards;
+  animation: letter-rise 1040ms cubic-bezier(0.16, 0.9, 0.22, 1) 1900ms forwards;
   pointer-events: auto;
 }
 
@@ -982,9 +990,7 @@ h2 {
 
 .site-footer {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 14px;
   margin: clamp(18px, 5vw, 36px) 0 0;
   padding: 18px 0 max(4px, env(safe-area-inset-bottom));
   border-top: 1px solid rgba(255, 248, 232, 0.1);
@@ -992,10 +998,6 @@ h2 {
   font-size: 0.78rem;
   font-weight: 700;
   text-align: center;
-}
-
-.site-footer span:last-child {
-  color: var(--gold);
 }
 
 .choice-row {
@@ -1440,15 +1442,15 @@ h2 {
     filter: blur(3px);
   }
 
-  46% {
+  62% {
     opacity: 1;
-    transform: translate(0, 0) scale(0.76) rotate(1.5deg);
+    transform: translate(0, 0) scale(0.92) rotate(1.2deg);
     filter: blur(0);
   }
 
-  76% {
+  84% {
     opacity: 1;
-    transform: translate(0, 0) scale(1.03) rotate(-0.4deg);
+    transform: translate(0, 0) scale(1.025) rotate(-0.35deg);
     filter: blur(0);
   }
 
@@ -1541,15 +1543,22 @@ h2 {
   }
 }
 
-@keyframes seal-fade {
+@keyframes seal-lift {
   0% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
 
+  42% {
+    opacity: 1;
+    transform: translate(-50%, -86%) scale(1.08) rotate(-8deg);
+    filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.22));
+  }
+
   100% {
     opacity: 0;
-    transform: translate(-50%, -58%) scale(0.8);
+    transform: translate(-50%, -112%) scale(0.72) rotate(12deg);
+    filter: drop-shadow(0 20px 22px rgba(0, 0, 0, 0));
   }
 }
 
