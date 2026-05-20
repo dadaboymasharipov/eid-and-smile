@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#10201c" />
+    <meta
+      name="description"
+      content="이드 알아드하를 위한 조용하고 따뜻한 축하 페이지."
+    />
+    <title>이드 알아드하 무바라크</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="intro" data-intro data-name="Tabassum" role="dialog" aria-label="시작 인사">
+      <div class="intro__stars" aria-hidden="true"></div>
+      <div class="intro__petals" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="intro__content">
+        <p class="intro__small">Eid Al-Adha Mubarak</p>
+        <p class="intro__name" data-intro-name>Tabassum</p>
+        <p class="intro__line">너의 고운 마음에 작은 축복이 닿기를.</p>
+      </div>
+      <button class="intro__skip" type="button" data-skip-intro>바로 보기</button>
+    </div>
+
+    <main class="page-shell">
+      <section class="hero" aria-label="이드 알아드하 축하">
+        <div class="sky" aria-hidden="true">
+          <div class="moon"></div>
+          <div class="star star-one"></div>
+          <div class="star star-two"></div>
+          <div class="star star-three"></div>
+          <div class="star star-four"></div>
+          <div class="star star-five"></div>
+          <div class="star star-six"></div>
+          <div class="star star-seven"></div>
+          <div class="star star-eight"></div>
+          <div class="arch arch-one"></div>
+          <div class="arch arch-two"></div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">너에게 보내는 조용한 축복</p>
+          <h1>이드 알아드하<br />무바라크</h1>
+          <p class="hero-text">
+            오늘 하루가 너에게 부드럽게 닿았으면 해. 따뜻한 웃음, 좋은 소식,
+            마음이 편해지는 순간들이 조용히 오래 남기를.
+          </p>
+        </div>
+
+        <button class="open-card" type="button" data-open-card>
+          <span class="open-card__icon" aria-hidden="true"></span>
+          <span>작은 편지 열기</span>
+        </button>
+      </section>
+
+      <section class="message-panel" data-card-panel aria-label="개인 축하 편지" hidden>
+        <div class="letter-backdrop" aria-hidden="true"></div>
+        <div class="envelope-scene">
+          <div class="eid-envelope" aria-hidden="true">
+            <span class="eid-envelope__back"></span>
+            <span class="eid-envelope__letter-shadow"></span>
+            <span class="eid-envelope__front"></span>
+            <span class="eid-envelope__flap"></span>
+            <span class="eid-envelope__seal"></span>
+          </div>
+
+          <article class="message-card">
+            <span class="letter-stamp" aria-hidden="true"></span>
+            <p class="card-label">Tabassum에게</p>
+            <h2>오늘의 축복이 네 마음에 부드럽게 머물기를.</h2>
+            <p>
+              이드는 감사와 나눔, 그리고 진심 어린 기도의 날이니까. 너의 고운
+              마음에도 평안이 오래 머물렀으면 해.
+            </p>
+            <p>
+              너와 네가 아끼는 사람들에게 따뜻한 축복이 함께하기를 바라.
+            </p>
+            <button class="letter-close" type="button" data-close-card>고이 접어두기</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="lantern-section" aria-label="등불 소원">
+        <div class="section-heading">
+          <p class="eyebrow">하나를 골라봐</p>
+          <h2>너를 위한 세 가지 소원</h2>
+        </div>
+
+        <div class="lantern-grid">
+          <button class="lantern" type="button" data-wish="barakah">
+            <span class="lantern__top" aria-hidden="true"></span>
+            <span class="lantern__body" aria-hidden="true">
+              <span class="lantern__glow"></span>
+            </span>
+            <span class="lantern__text">축복</span>
+          </button>
+          <button class="lantern" type="button" data-wish="joy">
+            <span class="lantern__top" aria-hidden="true"></span>
+            <span class="lantern__body" aria-hidden="true">
+              <span class="lantern__glow"></span>
+            </span>
+            <span class="lantern__text">미소</span>
+          </button>
+          <button class="lantern" type="button" data-wish="peace">
+            <span class="lantern__top" aria-hidden="true"></span>
+            <span class="lantern__body" aria-hidden="true">
+              <span class="lantern__glow"></span>
+            </span>
+            <span class="lantern__text">평안</span>
+          </button>
+        </div>
+
+        <p class="wish-output" data-wish-output>
+          등불 하나를 켜면, 너에게 닿는 소원이 나타나.
+        </p>
+      </section>
+
+      <section class="gift-section" aria-label="오늘의 작은 선물">
+        <div class="gift-copy">
+          <p class="eyebrow">작은 선물</p>
+          <h2>오늘 너에게 가장 필요한 것</h2>
+        </div>
+
+        <div class="choice-row" role="group" aria-label="오늘의 선물 선택">
+          <button type="button" class="choice is-active" data-choice="calm">고요함</button>
+          <button type="button" class="choice" data-choice="smiles">웃음</button>
+          <button type="button" class="choice" data-choice="duas">두아</button>
+        </div>
+
+        <div class="keepsake" data-keepsake>
+          <span class="keepsake__mark" aria-hidden="true"></span>
+          <p>
+            오늘만큼은 마음이 서두르지 않았으면 해. 세상이 잠깐 너의 평안을 위해
+            자리를 비켜주는 것처럼.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div class="lantern-stage" data-lantern-stage hidden>
+      <button class="stage-close" type="button" data-close-stage aria-label="닫기">닫기</button>
+      <div class="stage-stars" aria-hidden="true"></div>
+      <div class="stage-lantern" data-stage-lantern aria-hidden="true">
+        <span class="lantern__top"></span>
+        <span class="lantern__body">
+          <span class="lantern__glow"></span>
+          <span class="lantern__flame"></span>
+        </span>
+      </div>
+      <div class="spark-field" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <article class="wish-paper" data-wish-paper aria-live="polite">
+        <p class="paper-label">너에게 보내는 소원</p>
+        <p data-stage-wish></p>
+        <button class="paper-close" type="button" data-close-stage>돌아가기</button>
+      </article>
+    </div>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
