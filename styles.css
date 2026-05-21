@@ -1085,8 +1085,8 @@ h2 {
 }
 
 .lantern-stage {
-  --stage-lantern-y: clamp(24px, 5svh, 46px);
-  --spark-origin-y: clamp(78px, 14svh, 116px);
+  --stage-lantern-y: 0px;
+  --spark-origin-y: clamp(58px, 9svh, 84px);
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -1156,12 +1156,14 @@ h2 {
 }
 
 .stage-lantern {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   z-index: 2;
   display: grid;
   place-items: center;
   gap: 12px;
-  transform: translateY(var(--stage-lantern-y)) scale(0.92);
+  transform: translate(-50%, -50%) translateY(var(--stage-lantern-y)) scale(0.92);
   opacity: 0;
 }
 
@@ -1314,6 +1316,58 @@ h2 {
   --x: 140px;
   --y: -92px;
   animation-delay: 220ms;
+}
+
+.light-trail {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + var(--spark-origin-y) - 84px);
+  z-index: 2;
+  width: min(190px, 44vw);
+  height: min(270px, 34svh);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.light-trail::before,
+.light-trail::after,
+.light-trail span {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: block;
+  transform-origin: 50% 0;
+}
+
+.light-trail::before {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 226, 158, 0.72), rgba(228, 187, 101, 0.16) 52%, transparent);
+  filter: blur(0.2px);
+}
+
+.light-trail::after {
+  width: 42px;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(228, 187, 101, 0.18), transparent 72%);
+  filter: blur(18px);
+  transform: translateX(-50%);
+}
+
+.light-trail span {
+  width: 72%;
+  height: 78%;
+  border-left: 1px solid rgba(228, 187, 101, 0.28);
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(8deg);
+}
+
+.lantern-stage.is-blooming .light-trail,
+.lantern-stage.is-paper .light-trail {
+  animation: trail-arrive 950ms ease-out forwards;
 }
 
 .wish-paper {
@@ -1701,12 +1755,12 @@ h2 {
 
 @keyframes lantern-focus {
   0% {
-    transform: translateY(calc(var(--stage-lantern-y) + 26px)) scale(0.84);
+    transform: translate(-50%, -50%) translateY(calc(var(--stage-lantern-y) + 26px)) scale(0.84);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(var(--stage-lantern-y)) scale(1);
+    transform: translate(-50%, -50%) translateY(var(--stage-lantern-y)) scale(1);
     opacity: 1;
   }
 }
@@ -1762,19 +1816,19 @@ h2 {
 
 @keyframes lantern-approach {
   0% {
-    transform: translateY(var(--stage-lantern-y)) scale(1) rotate(0);
+    transform: translate(-50%, -50%) translateY(var(--stage-lantern-y)) scale(1) rotate(0);
     opacity: 1;
     filter: blur(0);
   }
 
   56% {
-    transform: translateY(var(--stage-lantern-y)) scale(1.18) rotate(1.5deg);
+    transform: translate(-50%, -50%) translateY(var(--stage-lantern-y)) scale(1.18) rotate(1.5deg);
     opacity: 1;
     filter: blur(0);
   }
 
   100% {
-    transform: translateY(var(--stage-lantern-y)) scale(1.82) rotate(-1deg);
+    transform: translate(-50%, -50%) translateY(var(--stage-lantern-y)) scale(1.82) rotate(-1deg);
     opacity: 0;
     filter: blur(16px);
   }
@@ -1838,6 +1892,18 @@ h2 {
   100% {
     opacity: 0;
     transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+@keyframes trail-arrive {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0.42);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
   }
 }
 
