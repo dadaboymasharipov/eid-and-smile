@@ -1331,8 +1331,7 @@ h2 {
 }
 
 .light-trail::before,
-.light-trail::after,
-.light-trail span {
+.light-trail::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -1342,27 +1341,21 @@ h2 {
 }
 
 .light-trail::before {
-  width: 1px;
+  width: 2px;
   height: 100%;
   background: linear-gradient(180deg, rgba(255, 226, 158, 0.72), rgba(228, 187, 101, 0.16) 52%, transparent);
-  filter: blur(0.2px);
+  border-radius: 999px;
+  filter: blur(0.4px);
+  transform: translateX(-50%);
 }
 
 .light-trail::after {
-  width: 42px;
+  width: 54px;
   height: 100%;
   border-radius: 50%;
   background: linear-gradient(180deg, rgba(228, 187, 101, 0.18), transparent 72%);
   filter: blur(18px);
   transform: translateX(-50%);
-}
-
-.light-trail span {
-  width: 72%;
-  height: 78%;
-  border-left: 1px solid rgba(228, 187, 101, 0.28);
-  border-radius: 50%;
-  transform: translateX(-50%) rotate(8deg);
 }
 
 .lantern-stage.is-blooming .light-trail,
