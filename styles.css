@@ -1085,6 +1085,8 @@ h2 {
 }
 
 .lantern-stage {
+  --stage-lantern-y: clamp(24px, 5svh, 46px);
+  --spark-origin-y: clamp(78px, 14svh, 116px);
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -1159,7 +1161,7 @@ h2 {
   display: grid;
   place-items: center;
   gap: 12px;
-  transform: translateY(18px) scale(0.92);
+  transform: translateY(var(--stage-lantern-y)) scale(0.92);
   opacity: 0;
 }
 
@@ -1247,7 +1249,7 @@ h2 {
   position: absolute;
   z-index: 2;
   left: 50%;
-  top: 50%;
+  top: calc(50% + var(--spark-origin-y));
   width: 1px;
   height: 1px;
   pointer-events: none;
@@ -1268,49 +1270,49 @@ h2 {
 }
 
 .spark-field span:nth-child(1) {
-  --x: -128px;
-  --y: -90px;
+  --x: -108px;
+  --y: -128px;
 }
 
 .spark-field span:nth-child(2) {
-  --x: 112px;
-  --y: -116px;
+  --x: 96px;
+  --y: -146px;
   animation-delay: 80ms;
 }
 
 .spark-field span:nth-child(3) {
-  --x: -88px;
-  --y: 82px;
+  --x: -72px;
+  --y: -42px;
   animation-delay: 130ms;
 }
 
 .spark-field span:nth-child(4) {
-  --x: 138px;
-  --y: 62px;
+  --x: 116px;
+  --y: -54px;
   animation-delay: 170ms;
 }
 
 .spark-field span:nth-child(5) {
-  --x: -24px;
-  --y: -154px;
+  --x: -12px;
+  --y: -168px;
   animation-delay: 30ms;
 }
 
 .spark-field span:nth-child(6) {
   --x: 34px;
-  --y: 136px;
+  --y: -26px;
   animation-delay: 110ms;
 }
 
 .spark-field span:nth-child(7) {
-  --x: -154px;
-  --y: 8px;
+  --x: -128px;
+  --y: -78px;
   animation-delay: 190ms;
 }
 
 .spark-field span:nth-child(8) {
-  --x: 162px;
-  --y: -8px;
+  --x: 140px;
+  --y: -92px;
   animation-delay: 220ms;
 }
 
@@ -1699,12 +1701,12 @@ h2 {
 
 @keyframes lantern-focus {
   0% {
-    transform: translateY(26px) scale(0.84);
+    transform: translateY(calc(var(--stage-lantern-y) + 26px)) scale(0.84);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(0) scale(1);
+    transform: translateY(var(--stage-lantern-y)) scale(1);
     opacity: 1;
   }
 }
@@ -1760,19 +1762,19 @@ h2 {
 
 @keyframes lantern-approach {
   0% {
-    transform: translateY(0) scale(1) rotate(0);
+    transform: translateY(var(--stage-lantern-y)) scale(1) rotate(0);
     opacity: 1;
     filter: blur(0);
   }
 
   56% {
-    transform: translateY(0) scale(1.18) rotate(1.5deg);
+    transform: translateY(var(--stage-lantern-y)) scale(1.18) rotate(1.5deg);
     opacity: 1;
     filter: blur(0);
   }
 
   100% {
-    transform: translateY(0) scale(1.82) rotate(-1deg);
+    transform: translateY(var(--stage-lantern-y)) scale(1.82) rotate(-1deg);
     opacity: 0;
     filter: blur(16px);
   }
