@@ -1330,7 +1330,6 @@ h2 {
   transform: translateX(-50%);
 }
 
-.light-trail::before,
 .light-trail::after {
   content: "";
   position: absolute;
@@ -1341,20 +1340,15 @@ h2 {
 }
 
 .light-trail::before {
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(255, 226, 158, 0.72), rgba(228, 187, 101, 0.16) 52%, transparent);
-  border-radius: 999px;
-  filter: blur(0.4px);
-  transform: translateX(-50%);
+  content: none;
 }
 
 .light-trail::after {
-  width: 54px;
+  width: 76px;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(180deg, rgba(228, 187, 101, 0.18), transparent 72%);
-  filter: blur(18px);
+  background: linear-gradient(180deg, rgba(228, 187, 101, 0.2), rgba(228, 187, 101, 0.08) 46%, transparent 76%);
+  filter: blur(20px);
   transform: translateX(-50%);
 }
 
